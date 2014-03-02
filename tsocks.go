@@ -113,11 +113,10 @@ func (proxy *Proxy) sure() error {
 	f := proxy.configFile()
 	if !exists(f) {
 		var content string
-		ps := strings.Split(proxy.IP, ".")
 		if proxy.User == "" {
-			content = fmt.Sprintf(Config, ps, proxy.IP, proxy.Version, proxy.Port)
+			content = fmt.Sprintf(Config, proxy.IP, proxy.IP, proxy.Version, proxy.Port)
 		} else {
-			content = fmt.Sprintf(PasswordConfig, ps, proxy.IP, proxy.Version, proxy.Port, proxy.User, proxy.Password)
+			content = fmt.Sprintf(PasswordConfig, proxy.IP, proxy.IP, proxy.Version, proxy.Port, proxy.User, proxy.Password)
 		}
 		return ioutil.WriteFile(f, []byte(content), 0644)
 	}
