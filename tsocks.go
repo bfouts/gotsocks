@@ -26,14 +26,16 @@ server = %s
 server_type = %d
 server_port = %s
 default_user = %s
-default_pass = %s`
+default_pass = %s
+`
 	Config = `
 local = 192.168.0.0/255.255.255.0
 local = 10.0.0.0/255.0.0.0
 local = %s/255.255.255.255
 server = %s
 server_type = %d
-server_port = %s`
+server_port = %s
+`
 )
 
 type Proxy struct {
